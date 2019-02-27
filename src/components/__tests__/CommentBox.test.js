@@ -20,6 +20,7 @@ it('has a text area and a button',()=>{
     expect( wrapped.find('button').length).toEqual(1);
 
 });
+
 // providing a fake event object that users can type in
 
 it('has a text area that users can type in ',()=>{
@@ -28,4 +29,15 @@ it('has a text area that users can type in ',()=>{
     });
     wrapped.update();
     expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
+});
+
+it('when form is submitted ,text area gets emptied',()=>{
+    wrapped.find('textarea').simulate('change',{
+        target:{value:'new comment'}
+    });
+    wrapped.update();
+    wrapped.find('form').simulate('submit');
+    wrapped.update();
+    expect(wrapped.find('textarea').prop('value')).toEqual('');
+
 });
