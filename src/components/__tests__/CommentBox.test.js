@@ -2,10 +2,19 @@ import React from 'react';
 import { mount } from 'enzyme';
 import CommentBox from 'components/CommentBox';
 
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import reducers from 'reducers';
+
+import Root from 'Root';
 let wrapped;
 //before every single test
 beforeEach(()=>{
-     wrapped=mount(<CommentBox/>);
+     wrapped=mount(
+         <Root>
+         <CommentBox/>
+         </Root>
+     );
 });
 afterEach(()=>{
    wrapped.unmount();
