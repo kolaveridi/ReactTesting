@@ -14,6 +14,7 @@ export default (ChildComponent) =>{
            }
        }
        render(){
+
            console.log('hoc',this.props);
            return <ChildComponent  {...this.props}/>
        }

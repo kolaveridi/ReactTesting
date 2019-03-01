@@ -22,6 +22,7 @@ class CommentBox extends React.Component{
         })
     }
     render(){
+        console.log('child',this.props);
         return(
         <div className="fetch-comments">
            <form onSubmit ={this.handleSubmit}>
