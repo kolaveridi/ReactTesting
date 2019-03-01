@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
+import requireAuth from 'components/requireAuth';
 class CommentList extends React.Component{
     renderComments(){
         return this.props.comments.map((comment)=>{
@@ -25,4 +25,4 @@ function mapStateToProps(state){
         comments:state.comments
     }
 }
-export default connect(mapStateToProps) (CommentList);
+export default connect(mapStateToProps) ((CommentList));

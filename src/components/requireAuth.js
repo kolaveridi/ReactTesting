@@ -10,7 +10,7 @@ export default (ChildComponent) =>{
        }
        shouldNavigateAway(){
            if(!this.props.auth){
-               console.log('I need to leave');
+                this.props.history.push('/');
            }
        }
        render(){
